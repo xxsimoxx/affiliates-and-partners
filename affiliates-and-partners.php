@@ -21,7 +21,7 @@ if (!defined('ABSPATH')) {
 //Add auto updater https://codepotent.com/classicpress/plugins/update-manager/
 require_once('classes/UpdateClient.class.php');
 
-class AgendaForCP{
+class AffiliateAndPartners{
 
 	private $metabox_nonce = false;
 
@@ -52,7 +52,7 @@ class AgendaForCP{
 	}
 
 	public function text_domain() {
-		load_plugin_textdomain('agenda', false, basename(dirname(__FILE__)).'/languages');
+		load_plugin_textdomain('apcp', false, basename(dirname(__FILE__)).'/languages');
 	}
 
 	public function register_style() {
@@ -243,7 +243,6 @@ class AgendaForCP{
 
 	public function process_shortcode($atts) { //phpcs:ignore
 		extract(shortcode_atts([
-			// TODO: filters
 			'category'		=> '',
 			'css'			=> 'yes',
 			'allow_reorder' => '',
@@ -402,4 +401,4 @@ class AgendaForCP{
 
 }
 
-new AgendaForCP;
+new AffiliateAndPartners;

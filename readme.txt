@@ -20,7 +20,7 @@ Manage a directory of affiliates or partners.
 This plugin allows to manage any kind of directory: affiliates, partners, local resellers, members of your association...
 
 The main goal is to keep it easy, light.
-Any customization can be done with css anf using filters.
+Any customization can be done with css and using filters.
 
 Go to "Affiliates and Partners" menu and add members the same way you add posts or pages.
 Use the shortcode in the pages where you want listing to appear.
@@ -30,11 +30,13 @@ CSS is very small too, so hopefully colors will be inherited from your theme, or
 
 ### Shortcode
 
-`[apcp-list category="33, 34"]`
+`[apcp-list category="33, 34" css="no" allow_reorder="province, id_number" full_search="yes"]`
 
 Supported parameters:
 - *category*: a category ID or a comma separated list of IDs. Default: all.
 - *css*: css for this plugin is very short. But if you want you cas skip loading it by setting `css="no"`
+- *allow_reorder*: display an "order by". Fields are comma separated.
+- *full_search*: display an input field that filters elements with full element search. Default: no.
 
 ### Supported custom fields
 
