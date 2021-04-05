@@ -1,0 +1,21 @@
+.apcp-svg {
+	width: 24px;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+.apcp-field {
+	margin-right: 10px;
+}
+
+.apcp-container {
+	display: grid;
+	align-items: top;
+	grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+	grid-auto-rows: 1fr;
+}
+
+.apcp-element {
+	padding: 10px;
+	margin: 10px;
+}
