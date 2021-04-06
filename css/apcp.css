@@ -6,6 +6,9 @@
 
 .apcp-field {
 	margin-right: 10px;
+	white-space: no-wrap;
+	display: inline-flex;
+	flex-wrap: wrap;
 }
 
 .apcp-container {

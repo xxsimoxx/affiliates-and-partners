@@ -48,8 +48,11 @@ You should insert the link pointing to your profile/page. An icon linked to your
 **Phone**
 You should insert the international phone number. The phone number is displayed with an icon.
 
-**Phone, E-Mail**
+**E-Mail**
 Insert e-mail in standard form. The mail address is displayed with an icon.
+
+**Website**
+Insert website url with protocol (https://my.web.site). The web site is displayed with an icon.
 
 **WhatsApp, Telegram**
 For WhatsApp insert your phone number in international format.
