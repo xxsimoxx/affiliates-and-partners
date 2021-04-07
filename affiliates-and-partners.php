@@ -93,14 +93,26 @@ class AffiliateAndPartners{
 			'show_ui'               => true,
 			'rewrite'               => false,
 			'supports'              => ['title', 'editor'],
-			'taxonomies' 			=> ['category'],
+			'taxonomies' 			=> [PREFIX.'-categories'],
 			'labels'                => $labels,
 			'exclude_from_search'   => false,
 			'register_meta_box_cb'	=> [$this, 'add_meta_boxes'],
 			'capabilities'       	=> $capabilities,
 			'menu_icon'				=> 'dashicons-awards',
 		];
+
 		register_post_type(PREFIX, $args);
+
+		register_taxonomy(
+			PREFIX.'-categories',
+			[PREFIX],
+			[
+				'hierarchical' 		=> true,
+				'label' 			=> __('Categories', 'apcp'),
+				'singular_label'	=> __('Category', 'apcp'),
+			]
+		);
+
 	}
 
 	private function list_meta_boxes() {
@@ -143,7 +155,7 @@ class AffiliateAndPartners{
 
 	public function save_meta_boxes_data($post_id) {
 
-		if (!current_user_can('manage_options')) {
+		if (!current_user_can('manage_options') && !defined('WP_CLI') && !WP_CLI) {
 			wp_die('You can\'t do this');
 		}
 
@@ -261,12 +273,12 @@ class AffiliateAndPartners{
 		$retval  = '';
 
 		$query = [
-			'post_type'   => PREFIX,
-			'post_status' => 'publish',
-			'numberposts' => -1,
-			'category'	  => $category,
-			'orderby' => 'title',
-			'order' => 'ASC',
+			'post_type'   		=> PREFIX,
+			'post_status' 		=> 'publish',
+			'numberposts' 		=> -1,
+			'apcp-categories'	=> $category,
+			'orderby' 			=> 'title',
+			'order' 			=> 'ASC',
 		];
 
 		$allposts = get_posts($query);

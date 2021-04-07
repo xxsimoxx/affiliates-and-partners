@@ -134,11 +134,6 @@ function myprefix_capoluoghi ($html, $field, $post_ID) {
 }
 ```
 
-
-### Shortcode
-
-TODO
-
 ### Uninstall
 When uninstalling all plugin data will be deleted.
 Put `define('KEEP_APCP', true)` in your `wp_config.php` to keep them.
