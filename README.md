@@ -56,15 +56,15 @@ If you want to add custom fields is up to you render them at output using filter
 
 ### Filters
 
-`apcp-fields` lets you add, delete or reorder custom fields.
-`apcp-element` lets you render custom fields or change the defaults (at element level).
-`apcp-element-meta` lets you render custom fields or change the defaults (at meta level).
-`apcp-field-render` lets you change the way a field input is rendered.
+`apcp_fields` lets you add, delete or reorder custom fields.
+`apcp_element` lets you render custom fields or change the defaults (at element level).
+`apcp_element_meta` lets you render custom fields or change the defaults (at meta level).
+`apcp_field_render` lets you change the way a field input is rendered.
 
 This example show how to use those filters:
 
 ```php
-add_filter( 'apcp-fields', 'myprefix_add_fields', 10, 1 );
+add_filter( 'apcp_fields', 'myprefix_add_fields', 10, 1 );
 
 function myprefix_add_fields( $fields ) {
 
@@ -77,7 +77,7 @@ function myprefix_add_fields( $fields ) {
 	return $fields;	
 }
 
-add_filter( 'apcp-element', 'myprefix_render_fields', 10, 3 );
+add_filter( 'apcp_element', 'myprefix_render_fields', 10, 3 );
 
 // $content:  the generated HTML to be filtered
 // $post:     the post object
@@ -93,7 +93,7 @@ function myprefix_render_fields ( $content, $post, $postmeta ) {
 
 // Here we just want to thide facebook field
 
-add_filter( 'apcp-element-meta', 'myprefix_render_fields', 10, 3 );
+add_filter( 'apcp_element_meta', 'myprefix_render_fields', 10, 3 );
 
 // $formatted:  the generated HTML to be filtered
 // $field_type: field type
@@ -105,9 +105,9 @@ function myprefix_element_meta ( $formatted, $field_type, $value ) {
 	return $formatted;
 }
 
-// Here we want to render the "province" field al a select with all italian provinces
+// Here we want to render the "province" field as a select with all italian provinces
 
-add_filter( 'apcp-field-render', 'myprefix_render_fields', 10, 3 );
+add_filter( 'apcp_field_render', 'myprefix_render_fields', 10, 3 );
 
 // $html:      HTML we need to generate metabox
 // $field:     field name

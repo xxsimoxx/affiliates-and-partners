@@ -130,8 +130,7 @@ class AffiliateAndPartners{
 				'id_number'				=> __('ID number', 'apcp'),
 		];
 
-		// apcp-fields filter used to add or remove custom fields
-		return apply_filters(PREFIX.'-fields', $meta);
+		return apply_filters(PREFIX.'_fields', $meta);
 	}
 
 	public function add_meta_boxes() {
@@ -143,7 +142,7 @@ class AffiliateAndPartners{
 	public function metabox_callback($post, $args) {
 		$field = $args['args'];
 		$html = '<input type="text" id="'.PREFIX.'-'.$field.'" name="'.PREFIX.'-'.$field.'" size="100" value="'.get_post_meta($post->ID, PREFIX.'-'.$field, true).'">';
-		echo apply_filters(PREFIX.'-field-render', $html, $field, $post->ID);
+		echo apply_filters(PREFIX.'_field_render', $html, $field, $post->ID);
 	}
 
 	public function save_meta_boxes_data($post_id) {
@@ -239,7 +238,7 @@ class AffiliateAndPartners{
 
 		}
 
-		return apply_filters(PREFIX.'-element-meta', $formatted, $field_type, $value);
+		return apply_filters(PREFIX.'_element_meta', $formatted, $field_type, $value);
 
 	}
 
@@ -347,7 +346,7 @@ class AffiliateAndPartners{
 
 			}
 
-			$retval         .= apply_filters(PREFIX.'-element', $current_retval, $post, $postmeta);
+			$retval         .= apply_filters(PREFIX.'_element', $current_retval, $post, $postmeta);
 
 			$retval         .= '</div>';
 
