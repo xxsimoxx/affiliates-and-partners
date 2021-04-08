@@ -22,8 +22,6 @@ require_once('classes/UpdateClient.class.php');
 
 class AffiliateAndPartners{
 
-	private $metabox_nonce = false;
-
 	public function __construct() {
 
 		require_once('includes/constants.php');
@@ -95,10 +93,11 @@ class AffiliateAndPartners{
 			'supports'              => ['title', 'editor'],
 			'taxonomies' 			=> [PREFIX.'-categories'],
 			'labels'                => $labels,
-			'exclude_from_search'   => false,
+			'exclude_from_search'   => true,
 			'register_meta_box_cb'	=> [$this, 'add_meta_boxes'],
 			'capabilities'       	=> $capabilities,
 			'menu_icon'				=> 'dashicons-awards',
+			'publicly_queryable'	=> false,
 		];
 
 		register_post_type(PREFIX, $args);
@@ -120,7 +119,7 @@ class AffiliateAndPartners{
 				'province'				=> __('Province',  'apcp'),
 				'phone'					=> __('Phone',     'apcp'),
 				'e_mail'				=> __('E-Mail',    'apcp'),
-				'www'					=> __('Website',    'apcp'),
+				'www'					=> __('Website',   'apcp'),
 				'whatsapp'				=> __('WhatsApp',  'apcp'),
 				'telegram'				=> __('Telegram',  'apcp'),
 				'facebook'				=> __('Facebook',  'apcp'),
@@ -142,36 +141,18 @@ class AffiliateAndPartners{
 	}
 
 	public function metabox_callback($post, $args) {
-
-		if (!$this->metabox_nonce) {
-			wp_nonce_field(basename(__FILE__), PREFIX.'_nonce');
-			$this->metabox_nonce = true;
-		}
-
 		$field = $args['args'];
 		$html = '<input type="text" id="'.PREFIX.'-'.$field.'" name="'.PREFIX.'-'.$field.'" size="100" value="'.get_post_meta($post->ID, PREFIX.'-'.$field, true).'">';
 		echo apply_filters(PREFIX.'-field-render', $html, $field, $post->ID);
 	}
 
 	public function save_meta_boxes_data($post_id) {
-
-		if (!current_user_can('manage_options') && !defined('WP_CLI') && !WP_CLI) {
-			wp_die('You can\'t do this');
-		}
-
 		foreach (array_keys($this->list_meta_boxes()) as $slug) {
-
 			if (!isset($_REQUEST[PREFIX.'-'.$slug])) {
 				continue;
 			}
-
-			if (!isset($_POST[PREFIX.'_nonce']) || !wp_verify_nonce($_POST[PREFIX.'_nonce'], basename(__FILE__))) {
-				wp_die('Nonce error');
-			}
-
 			update_post_meta($post_id, PREFIX.'-'.$slug, sanitize_text_field($_REQUEST[PREFIX.'-'.$slug]));
 		}
-
 	}
 
 	public function settings_link($links) {
@@ -258,7 +239,7 @@ class AffiliateAndPartners{
 
 		}
 
-		return $formatted;
+		return apply_filters(PREFIX.'-element-meta', $formatted, $field_type, $value);
 
 	}
 
