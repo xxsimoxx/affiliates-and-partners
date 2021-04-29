@@ -1,0 +1,145 @@
+# Copyright (C) 2021 Gieffe edizioni srl
+# This file is distributed under the same license as the Affiliates and Partners for CP plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Affiliates and Partners for CP 0.0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/affiliates-and-partners\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-04-29T06:40:38+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: apcp\n"
+
+#. Plugin Name of the plugin
+msgid "Affiliates and Partners for CP"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://software.gieffeedizioni.it"
+msgstr ""
+
+#. Description of the plugin
+msgid "Affiliates and Partners directory made easy."
+msgstr ""
+
+#. Author of the plugin
+msgid "Gieffe edizioni srl"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://www.gieffeedizioni.it"
+msgstr ""
+
+#: affiliates-and-partners.php:76
+#: affiliates-and-partners.php:77
+msgid "Item"
+msgstr ""
+
+#: affiliates-and-partners.php:78
+#: affiliates-and-partners.php:81
+msgid "New item"
+msgstr ""
+
+#: affiliates-and-partners.php:79
+msgid "Add new item"
+msgstr ""
+
+#: affiliates-and-partners.php:80
+msgid "Edit item"
+msgstr ""
+
+#: affiliates-and-partners.php:82
+msgid "Items"
+msgstr ""
+
+#: affiliates-and-partners.php:83
+msgid "View item"
+msgstr ""
+
+#: affiliates-and-partners.php:84
+msgid "Search items"
+msgstr ""
+
+#: affiliates-and-partners.php:85
+msgid "No items found"
+msgstr ""
+
+#: affiliates-and-partners.php:86
+msgid "No items found in trash"
+msgstr ""
+
+#: affiliates-and-partners.php:87
+msgid "Affiliates and Partners"
+msgstr ""
+
+#: affiliates-and-partners.php:110
+msgid "Categories"
+msgstr ""
+
+#: affiliates-and-partners.php:111
+msgid "Category"
+msgstr ""
+
+#: affiliates-and-partners.php:119
+msgid "Province"
+msgstr ""
+
+#: affiliates-and-partners.php:120
+msgid "Phone"
+msgstr ""
+
+#: affiliates-and-partners.php:121
+msgid "E-Mail"
+msgstr ""
+
+#: affiliates-and-partners.php:122
+msgid "Website"
+msgstr ""
+
+#: affiliates-and-partners.php:123
+msgid "WhatsApp"
+msgstr ""
+
+#: affiliates-and-partners.php:124
+msgid "Telegram"
+msgstr ""
+
+#: affiliates-and-partners.php:125
+msgid "Facebook"
+msgstr ""
+
+#: affiliates-and-partners.php:126
+msgid "LinkedIn"
+msgstr ""
+
+#: affiliates-and-partners.php:127
+msgid "Instagram"
+msgstr ""
+
+#: affiliates-and-partners.php:128
+msgid "Twitter"
+msgstr ""
+
+#: affiliates-and-partners.php:129
+msgid "Google"
+msgstr ""
+
+#: affiliates-and-partners.php:130
+msgid "ID number"
+msgstr ""
+
+#: affiliates-and-partners.php:158
+msgid "Settings"
+msgstr ""
+
+#: affiliates-and-partners.php:273
+msgid "Sort by"
+msgstr ""
+
+#: affiliates-and-partners.php:295
+msgid "Search for..."
+msgstr ""
