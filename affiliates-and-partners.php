@@ -302,7 +302,7 @@ class AffiliateAndPartners{
 		foreach ($allposts as $post) {
 
 			$postmeta = [];
-			$data = 'data-'.PREFIX.'-titel="'.$post->post_title.'"';
+			$data = 'data-'.PREFIX.'-title="'.$post->post_title.'"';
 			foreach (array_keys($metas) as $slug) {
 				$value = get_post_meta($post->ID, PREFIX.'-'.$slug, true);
 				if ($value === '' || $value === false) {
