@@ -260,7 +260,7 @@ class AffiliateAndPartners{
 
 		$metas = $this->list_meta_boxes();
 
-		if ($css !== 'no') {
+		if ($css !== '0') {
 			wp_enqueue_style('apcp-style');
 		}
 
