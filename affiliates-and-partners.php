@@ -277,12 +277,14 @@ class AffiliateAndPartners{
 
 				$order_element = trim($order_element);
 
-				if (!isset($metas[$order_element])) {
+				if (!isset($metas[$order_element]) && $order_element !== '_default') {
 					continue;
 				}
 
+				$name = $order_element === '_default' ? __('Default') : $metas[$order_element];
+				$order_element = $order_element === '_default' ? 'title' : $order_element;
 				$target = lcfirst(str_replace(' ', '', ucwords(str_replace('-', ' ', PREFIX.'-'.$order_element))));
-				$retval .= ' <a href="#" onClick=\'return sortChildren("'.$target.'")\'>'.$metas[$order_element].'</a>';
+				$retval .= ' <a href="#" onClick=\'return sortChildren("'.$target.'")\'>'.$name.'</a>';
 			}
 
 			$retval .= '</div>';

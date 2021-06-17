@@ -35,7 +35,7 @@ CSS is very small too, so hopefully colors will be inherited from your theme, or
 Supported parameters:
 - *category*: a category ID or a comma separated list of IDs. Default: all.
 - *css*: css for this plugin is very short. But if you want you cas skip loading it by setting `css="0"`. Default 1.
-- *allow_reorder*: display an "order by". Fields are comma separated.
+- *allow_reorder*: display an "order by". Fields are comma separated. You can also add '_default' to allow sort by title.
 - *full_search*: display an input field that filters elements with full element search. Default: no.
 
 ### Supported custom fields
