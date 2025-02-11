@@ -327,7 +327,7 @@ class AffiliateAndPartners{
 
 			foreach ($postmeta as $meta => $content) {
 
-				if ($content === '') {
+				if ($content === '' || ($meta==='www' && $content==='https://')) {
 					continue;
 				}
 
